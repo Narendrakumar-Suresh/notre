@@ -1,0 +1,23 @@
+{
+  "name": "example",
+  "type": "module",
+  "scripts": {
+    "dev": "vinxi dev --host localhost",
+    "build": "vinxi build",
+    "start": "vinxi start"
+  },
+  "dependencies": {
+    "react": "^19.0.2",
+    "react-dom": "^19.0.2",
+    "notre": "workspace:*",
+    "vinxi": "^0.5.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.16",
+    "@types/node": "^24.9.1",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "tailwindcss": "^4.1.16",
+    "typescript": "^5.7.2"
+  }
+}

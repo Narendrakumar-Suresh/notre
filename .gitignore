@@ -1,0 +1,10 @@
+node_modules/
+packages/notre/dist
+packages/notre/node_modules
+packages/create-notre/dist
+packages/create-notre/node_modules
+
+examples/example/node_modules/
+examples/example/.output/
+examples/example/.vinxi/
+examples/example/app.config.**.ts

@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "jsx": "react-jsx",
+    "paths": {
+      "notre": ["./packages/notre/src/index.ts"],
+      "notre/*": ["./packages/notre/src/*"]
+    }
+  }
+}
