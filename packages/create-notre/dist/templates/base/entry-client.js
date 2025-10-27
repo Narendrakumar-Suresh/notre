@@ -1,7 +1,7 @@
-export const getEntryClient = (tailwind: boolean) => `
+export const getEntryClient = (tailwind) => `
 import { hydrateRoot, createRoot } from "react-dom/client";
 import React from "react";
-${tailwind ? 'import "./app.css";' : ""}
+${tailwind ? 'import "./app.css";' : ''}
 
 const allRoutes = import.meta.glob("./pages/**/*.{ts,tsx}");
 

@@ -1,6 +1,6 @@
 {
   "name": "create-notre",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "bin": {
     "create-notre": "./dist/index.js"

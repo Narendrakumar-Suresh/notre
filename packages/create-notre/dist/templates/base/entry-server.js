@@ -1,4 +1,4 @@
-export const getEntryServer = (tailwind: boolean) => `
+export const getEntryServer = (tailwind) => `
 import { eventHandler } from "vinxi/http";
 import React from "react";
 import { renderToString } from "react-dom/server";
@@ -16,7 +16,6 @@ function toPath(path: string) {
       .replace("/_layout", "") || "/"
   );
 }
-
 
 const routes = Object.fromEntries(
   Object.entries(allRoutes)

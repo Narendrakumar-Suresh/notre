@@ -2,14 +2,15 @@
   "name": "example",
   "type": "module",
   "scripts": {
-    "dev": "vinxi dev --host localhost",
+    "dev": "vinxi dev --port 3000",
     "build": "vinxi build",
     "start": "vinxi start"
   },
   "dependencies": {
+    "notre": "workspace:*",
     "react": "^19.0.2",
     "react-dom": "^19.0.2",
-    "notre": "workspace:*",
+    "swc": "^1.0.11",
     "vinxi": "^0.5.8"
   },
   "devDependencies": {

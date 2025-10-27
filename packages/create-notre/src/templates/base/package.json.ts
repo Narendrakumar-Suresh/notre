@@ -25,6 +25,7 @@ export const getPackageJson = (projectName: string, tailwind: boolean) => {
         "react-dom": "^19.0.2",
         notre: "^0.1.0",
         vinxi: "^0.5.8",
+        swc: "^1.0.11",
       },
       devDependencies,
     },
