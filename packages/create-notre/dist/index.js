@@ -97,6 +97,7 @@ function getPackageJson(config) {
             "react-dom": "^19.0.2",
             notre: "^0.1.0",
             vinxi: "^0.5.8",
+            "@swc/core": "^1.13.5",
         },
         devDependencies: {
             "@tailwindcss/vite": "^4.1.16",
@@ -302,11 +303,11 @@ import "./app.css";
 const allRoutes = import.meta.glob("./pages/**/*.{${config.typescript ? "ts,tsx" : "js,jsx"}}");
 const isDev = process.env.NODE_ENV !== 'production';
 
-function toPath(path${config.typescript ? ": string" : ""}) {
+function toPath(path: string) {
   return (
     path
       .replace("./pages", "")
-      .replace(/(\/index)?\.${config.typescript ? "(ts|tsx)" : "(js|jsx)"}$/, "")
+      .replace(/(\/index)?\.(ts|tsx)$/, "")
       .replace("/_layout", "") || "/"
   );
 }
