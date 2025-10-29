@@ -97,6 +97,7 @@ function getPackageJson(config) {
             "react-dom": "^19.0.2",
             notre: "^0.1.0",
             vinxi: "^0.5.8",
+            "@swc/core": "^1.13.5",
         },
         devDependencies: {
             "@tailwindcss/vite": "^4.1.16",

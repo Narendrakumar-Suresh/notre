@@ -8,7 +8,7 @@ ${tailwind ? 'import "./app.css";' : ""}
 const allRoutes = import.meta.glob("./pages/**/*.{ts,tsx}");
 const isDev = process.env.NODE_ENV !== 'production';
 
-function toPath(path: string) {
+function toPath(path:string) :string{
   return (
     path
       .replace("./pages", "")
@@ -16,7 +16,6 @@ function toPath(path: string) {
       .replace("/_layout", "") || "/"
   );
 }
-
 
 const routes = Object.fromEntries(
   Object.entries(allRoutes)
