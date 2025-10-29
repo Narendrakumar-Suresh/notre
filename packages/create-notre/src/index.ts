@@ -225,11 +225,11 @@ require("./app.css");`;
 
 const allRoutes = import.meta.glob("./pages/**/*.{${config.typescript ? "ts,tsx" : "js,jsx"}}");
 
-function toPath(path) {
+function toPath(path: string) {
   return (
     path
       .replace("./pages", "")
-      .replace(/(\/index)?\.${config.typescript ? "(ts|tsx)" : "(js|jsx)"}$/, "")
+      .replace(/(\/index)?\.(ts|tsx)$/, "")
       .replace("/_layout", "") || "/"
   );
 }

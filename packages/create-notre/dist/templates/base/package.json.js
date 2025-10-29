@@ -22,7 +22,11 @@ export const getPackageJson = (projectName, tailwind) => {
             "react-dom": "^19.0.2",
             notre: "^0.1.0",
             vinxi: "^0.5.8",
-        },
-        devDependencies,
-    }, null, 2);
-};
+        }
+    },  / core, "^1.13.5");
+}, devDependencies;
+null,
+    2,
+;
+;
+;

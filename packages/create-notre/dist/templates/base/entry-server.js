@@ -17,6 +17,7 @@ function toPath(path: string) {
   );
 }
 
+
 const routes = Object.fromEntries(
   Object.entries(allRoutes)
     .filter(([path]) => !path.includes("_layout"))

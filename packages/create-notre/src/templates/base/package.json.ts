@@ -11,25 +11,20 @@ export const getPackageJson = (projectName: string, tailwind: boolean) => {
     devDependencies["tailwindcss"] = "^4.1.16";
   }
 
-  return JSON.stringify(
-    {
-      name: projectName,
-      type: "module",
-      scripts: {
-        dev: "vinxi dev --host localhost",
-        build: "vinxi build",
-        start: "vinxi start",
-      },
-      dependencies: {
-        react: "^19.0.2",
-        "react-dom": "^19.0.2",
-        notre: "^0.1.0",
-        vinxi: "^0.5.8",
-        swc: "^1.0.11",
-      },
-      devDependencies,
+  return JSON.stringify({
+    name: projectName,
+    type: "module",
+    scripts: {
+      dev: "vinxi dev --host localhost",
+      build: "vinxi build",
+      start: "vinxi start",
     },
-    null,
-    2,
-  );
+    dependencies: {
+      react: "^19.0.2",
+      "react-dom": "^19.0.2",
+      notre: "^0.1.0",
+      vinxi: "^0.5.8",
+      "@swc/core": "^1.13.5",
+    },
+  });
 };
