@@ -230,7 +230,7 @@ function toPath(path: string) {
   return (
     path
       .replace("./pages", "")
-      .replace(/(\/index)?\.(ts|tsx)$/, "")
+      .replace(/(\\/index)?\\.(ts|tsx)$/, "")
       .replace("/_layout", "") || "/"
   );
 }
@@ -354,7 +354,7 @@ function toPath(path: string) {
   return (
     path
       .replace("./pages", "")
-      .replace(/(\/index)?\.(ts|tsx)$/, "")
+      .replace(/(\\/index)?\\.(ts|tsx)$/, "")
       .replace("/_layout", "") || "/"
   );
 }
