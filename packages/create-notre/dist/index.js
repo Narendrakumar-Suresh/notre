@@ -303,11 +303,11 @@ import "./app.css";
 const allRoutes = import.meta.glob("./pages/**/*.{${config.typescript ? "ts,tsx" : "js,jsx"}}");
 const isDev = process.env.NODE_ENV !== 'production';
 
-function toPath(path${config.typescript ? ": string" : ""}) {
+function toPath(path: string) {
   return (
     path
       .replace("./pages", "")
-      .replace(/(\/index)?\.${config.typescript ? "(ts|tsx)" : "(js|jsx)"}$/, "")
+      .replace(/(\/index)?\.(ts|tsx)$/, "")
       .replace("/_layout", "") || "/"
   );
 }

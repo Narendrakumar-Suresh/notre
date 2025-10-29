@@ -134,11 +134,11 @@ function getPackageJson(config: ProjectConfig): string {
         "@tailwindcss/vite": "^4.1.16",
         ...(config.typescript
           ? {
-              "@types/node": "^24.9.1",
-              "@types/react": "^19.0.2",
-              "@types/react-dom": "^19.0.2",
-              typescript: "^5.7.2",
-            }
+            "@types/node": "^24.9.1",
+            "@types/react": "^19.0.2",
+            "@types/react-dom": "^19.0.2",
+            typescript: "^5.7.2",
+          }
           : {}),
         tailwindcss: "^4.1.16",
       },
@@ -350,11 +350,11 @@ import "./app.css";
 const allRoutes = import.meta.glob("./pages/**/*.{${config.typescript ? "ts,tsx" : "js,jsx"}}");
 const isDev = process.env.NODE_ENV !== 'production';
 
-function toPath(path${config.typescript ? ": string" : ""}) {
+function toPath(path: string) {
   return (
     path
       .replace("./pages", "")
-      .replace(/(\/index)?\.${config.typescript ? "(ts|tsx)" : "(js|jsx)"}$/, "")
+      .replace(/(\/index)?\.(ts|tsx)$/, "")
       .replace("/_layout", "") || "/"
   );
 }
