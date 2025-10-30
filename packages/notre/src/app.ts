@@ -4,6 +4,7 @@ import type { notreAppOptions } from "./types.js";
 import tsconfigPaths from "vite-tsconfig-paths";
 import { notreValidationPlugin } from "./vite-plugin.js";
 import tailwindcss from "@tailwindcss/vite";
+import react from "@vitejs/plugin-react";
 
 export function defineConfig(options: notreAppOptions = {}) {
   const appRoot = options.appRoot || "./src";
@@ -28,6 +29,7 @@ export function defineConfig(options: notreAppOptions = {}) {
           client: "client",
         },
         plugins: () => [
+          react(),
           notreValidationPlugin({ type: "server" }),
           tsconfigPaths(),
           tailwindcss(),
@@ -49,6 +51,7 @@ export function defineConfig(options: notreAppOptions = {}) {
         target: "browser",
         base: "/_build",
         plugins: () => [
+          react(),
           notreValidationPlugin({ type: "client" }),
           tsconfigPaths(),
           tailwindcss(),

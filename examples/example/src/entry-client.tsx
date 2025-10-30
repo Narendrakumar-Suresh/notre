@@ -3,6 +3,11 @@ import React from "react";
 import RootLayout from "./pages/_layout";
 import "./app.css";
 
+// At the end of the generated entry-client code
+if (import.meta.hot) {
+  import.meta.hot.accept();
+}
+
 const allRoutes = import.meta.glob("./pages/**/*.{ts,tsx}");
 
 function toPath(path: string) {

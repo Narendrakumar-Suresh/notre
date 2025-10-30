@@ -41,6 +41,7 @@ function checkNode(
   reactNamespace: string | null,
   issues: string[],
   skipImports: boolean = false,
+  inFunctionBody: boolean = false, // ADD THIS PARAMETER
 ): void {
   if (!node || typeof node !== "object") return;
 
@@ -49,8 +50,15 @@ function checkNode(
     return;
   }
 
+  // Track if we're entering a function body
+  const isEnteringFunction = node.type === "FunctionDeclaration" || 
+                             node.type === "FunctionExpression" ||
+                             node.type === "ArrowFunctionExpression";
+  
+  const nowInFunction = inFunctionBody || isEnteringFunction;
+
   // Check for React.useState() pattern (MemberExpression)
-  if (node.type === "MemberExpression" && !hasCsrExport) {
+  if (node.type === "MemberExpression" && !hasCsrExport && nowInFunction) { // ADD nowInFunction check
     if (
       node.object?.type === "Identifier" &&
       node.object.value === reactNamespace &&
@@ -63,8 +71,8 @@ function checkNode(
     }
   }
 
-  // Check identifiers for hooks and browser APIs
-  if (node.type === "Identifier" && !hasCsrExport) {
+  // Check identifiers for hooks and browser APIs - ONLY in function bodies
+  if (node.type === "Identifier" && !hasCsrExport && nowInFunction) { // ADD nowInFunction check
     const name = node.value;
     if (reactImports.has(name) && CLIENT_ONLY_HOOKS.has(name)) {
       issues.push(`Hook '${name}' requires 'export const csr = true'`);
@@ -79,10 +87,10 @@ function checkNode(
     const value = node[key];
     if (Array.isArray(value)) {
       value.forEach((item) =>
-        checkNode(item, hasCsrExport, reactImports, reactNamespace, issues),
+        checkNode(item, hasCsrExport, reactImports, reactNamespace, issues, false, nowInFunction), // Pass nowInFunction
       );
     } else if (value && typeof value === "object") {
-      checkNode(value, hasCsrExport, reactImports, reactNamespace, issues);
+      checkNode(value, hasCsrExport, reactImports, reactNamespace, issues, false, nowInFunction); // Pass nowInFunction
     }
   }
 }

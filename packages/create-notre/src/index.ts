@@ -350,14 +350,7 @@ import "./app.css";
 const allRoutes = import.meta.glob("./pages/**/*.{${config.typescript ? "ts,tsx" : "js,jsx"}}");
 const isDev = process.env.NODE_ENV !== 'production';
 
-function toPath(path: string) {
-  return (
-    path
-      .replace("./pages", "")
-      .replace(/(\\/index)?\\.(ts|tsx)$/, "")
-      .replace("/_layout", "") || "/"
-  );
-}
+
 
 const routes${config.typescript ? ": Record<string, () => Promise<any>>" : ""} = Object.fromEntries(
   Object.entries(allRoutes)
