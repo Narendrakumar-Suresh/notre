@@ -1,8 +1,0 @@
-{
-  "extends": "../../tsconfig.json",
-  "include": ["src", "*.ts", "app.config.ts"],
-  "compilerOptions": {
-    "types": ["vite/client", "node"],
-    "outDir": "./build"
-  }
-}
